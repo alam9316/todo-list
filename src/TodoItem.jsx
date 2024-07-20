@@ -1,10 +1,4 @@
-export default function TodoItem({
-  completed,
-  id,
-  title,
-  deleteTodo,
-  toggleTodo
-}) {
+export function TodoItem({ completed, id, title, deleteTodo, toggleTodo }) {
   return (
     <li>
       <label>
