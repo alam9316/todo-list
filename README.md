@@ -1,6 +1,6 @@
 # todo-list
 
-Welcome to Project Name! This project does XYZ and allows you to explore ABC.
+Simple Todo List application using React.
 
 ## Getting Started
 
