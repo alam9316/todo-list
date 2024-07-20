@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NewTodoForm } from "./NewTodoForm";
 import { TodoList } from "./TodoList";
 import "./styles.css";
+const LOCAL_STORAGE_ITEMS_NAME = "TODO_LIST_ITEMS";
 
 export default function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem(LOCAL_STORAGE_ITEMS_NAME);
+    if (localValue) return JSON.parse(localValue);
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_ITEMS_NAME, JSON.stringify(todos));
+  }, [todos]);
 
   function addTodo(title) {
     setTodos((currentTodos) => {
