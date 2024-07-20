@@ -15,11 +15,11 @@ export default function App() {
     });
   }
 
-  function toggleTodo(id, isCompleted) {
+  function toggleTodo(id, completed) {
     setTodos((currentTodos) => {
       return currentTodos.map((todo) => {
         if (todo.id === id) {
-          return { ...todo, completed: isCompleted };
+          return { ...todo, completed };
         }
         return todo;
       });
